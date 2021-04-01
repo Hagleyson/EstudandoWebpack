@@ -1,5 +1,5 @@
 module.exports = {
   saudacao() {
-    return "moduloB";
+    return "Eu sou o moduloB";
   },
 };
