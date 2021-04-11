@@ -1,9 +1,1 @@
-body {
-  background-color: #ccc;
-}
-
-.botao {
-  background-color: #ccc;
-  color: #fff;
-  font-size: 1.5rem;
-}
+.botao,body{background-color:#ccc}.botao{color:#fff;font-size:1.5rem}

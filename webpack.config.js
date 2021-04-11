@@ -1,12 +1,26 @@
 const webpack = require("webpack");
+const modeDev = process.env.NODE_ENV !== "production";
+const UngliflyPlugin = require("uglifyjs-webpack-plugin");
+const optimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = {
-  mode: "development", //modo de desenvovimento
+  mode: modeDev ? "development" : "production", //modo de desenvovimento
   entry: "./src/principal.js", //ponto de entrada
   //configurando pastas de Saida - nesse caso vai salvar um arquivo um principal dentro da pasta public
   output: {
     filename: "principal.js",
     path: __dirname + "/public",
+  },
+  //otimização
+  optimization: {
+    minimizer: [
+      new UngliflyPlugin({
+        cache: true,
+        parallel: true, //minificar para ficar mais rápido
+      }),
+      new OptimizeCssAssetsPlugin({}),
+    ],
   },
   plugins: [
     //plugin que extrai o css para um arquivo externo

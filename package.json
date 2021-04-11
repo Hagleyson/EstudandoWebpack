@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack"
+    "start": "webpack",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "author": "Hagleyson",
   "license": "ISC",
   "devDependencies": {
+    "cross-env": "^7.0.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "css-loader": "^5.2.0",
     "style-loader": "^2.0.0",
     "webpack": "^5.28.0",
