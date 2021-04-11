@@ -1,7 +1,6 @@
 const webpack = require("webpack");
 const modeDev = process.env.NODE_ENV !== "production";
 const UngliflyPlugin = require("uglifyjs-webpack-plugin");
-const optimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = {
